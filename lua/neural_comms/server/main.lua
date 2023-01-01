@@ -47,7 +47,7 @@ hook.Add("PlayerSay", "ncomms_psay", function (ply, msg)
         ncomms.MODULE:Log("{1} said {2} in {3}.", GAS.Logging:FormatPlayer(ply), GAS.Logging:Highlight(table.concat(args, " ", 2)), GAS.Logging:Highlight(CommName .. "_" .. (commsType or "default")))
     end
 
-    ncomms.BroadCastComms(commsType, comms, author)
+    ncomms.BroadCastComms(commsType, comms, author, args)
 
     return ""
 end)

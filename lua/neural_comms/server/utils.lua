@@ -35,7 +35,7 @@ function ncomms.SendToClient(ply, Msg)
     net.Send(ply)
 end
     
-function ncomms.BroadCastComms(commsType, comms, author)
+function ncomms.BroadCastComms(commsType, comms, author, args)
 
     local CommName = comms.name or args[1]
     CommName = string.upper(CommName)
