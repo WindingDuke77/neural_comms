@@ -25,7 +25,7 @@ Also allows Two different Team, to have the same comms but different channels
 2. 📂 Open neural_comms_config.lua
 3. 🗒️ Use the example for help
 
-## How to use in RPCC
+## How to use in Neural Comms
 Use the following as the step type: `{"Comms", CommsName, TheMsg}`
 Note: It does currently work with different channels yet.
 
