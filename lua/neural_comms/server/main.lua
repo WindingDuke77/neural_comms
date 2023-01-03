@@ -41,6 +41,9 @@ hook.Add("PlayerSay", "ncomms_psay", function (ply, msg)
             return 
         end
     end
+    
+    local CommName = comms.name or args[1]
+    CommName = string.upper(CommName)
 
     local author = ply
     
