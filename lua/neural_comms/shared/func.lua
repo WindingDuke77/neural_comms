@@ -18,10 +18,10 @@ function ncomms.funcs.copy (comm_name, new_comm_name, changes)
     return new_comm
 end
 
-function ncomms.funcs.blacklist(ply, ...)
+function ncomms.funcs.blacklist(ply, teams)
     if not ply:IsPlayer() then return false end
     local blacklist = true  
-    for _, v in pairs({...}) do
+    for _, v in pairs(teams) do
         if ply:Team() == v then
             blacklist = false
         end
@@ -29,10 +29,10 @@ function ncomms.funcs.blacklist(ply, ...)
     return blacklist
 end
 
-function ncomms.funcs.whitelist(ply, ...)
+function ncomms.funcs.whitelist(ply, teams)
     if not ply:IsPlayer() then return false end
     local whitelist = false 
-    for _, v in pairs({...}) do
+    for _, v in pairs(teams) do
         if ply:Team() == v then
             whitelist = true
         end
