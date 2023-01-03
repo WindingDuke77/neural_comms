@@ -7,9 +7,13 @@ ncomms.config = ncomms.config or {}
 local config = ncomms.config
 ncomms.funcs = ncomms.funcs or {}
 config.Comms = {}
+
+local copy = ncomms.funcs.copy
+local blacklist = ncomms.funcs.blacklist
+local whitelist = ncomms.funcs.whitelist
+print( copy, blacklist, whitelist, "Notice Me" )
 timer.Simple( 0 , function ()
 -- Do not above this line. 
-
 
 -- Custom Functions 
 --[[
@@ -121,6 +125,5 @@ copy("comms", "comms-lvl2", {
 -- Do not edit below this line
 end)
 
-local copy = ncomms.funcs.copy
-local blacklist = ncomms.funcs.blacklist
-local whitelist = ncomms.funcs.whitelist
+
+

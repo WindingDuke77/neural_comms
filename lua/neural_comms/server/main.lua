@@ -23,6 +23,7 @@ end)
 
 hook.Add("PlayerSay", "ncomms_psay", function (ply, msg)
     local args = string.Split(msg, " ")
+    if not config.prefix then return MsgC(Color(255,0,0), "[NCOMMS]: Config isnt loaded. Please Scroll up and check the errors") end
     args[1] = string.sub(args[1], #config.prefix + 1)
     args[1] = string.lower(args[1])
     local comms = config.Comms[args[1]]
