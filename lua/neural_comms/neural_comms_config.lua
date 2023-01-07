@@ -11,7 +11,6 @@ config.Comms = {}
 local copy = ncomms.funcs.copy
 local blacklist = ncomms.funcs.blacklist
 local whitelist = ncomms.funcs.whitelist
-print( copy, blacklist, whitelist, "Notice Me" )
 timer.Simple( 0 , function ()
 -- Do not above this line. 
 
