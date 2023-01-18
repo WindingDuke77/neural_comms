@@ -90,6 +90,8 @@ timer.Simple( 0 , function ()
 
 config.prefix = "/" -- prefix for the commands
 
+--[[
+
 -- 2 different comms for the two team_vars (TEAM_CIV and TEAM_CIV2)
 config.Comms["comms"] = { -- name of Comm
     name = "comms", -- name of Comm -- Not Required
@@ -113,6 +115,7 @@ config.Comms["opencomms"] = { -- name of Comm
     color = Color(251, 255, 0), 
 }
 
+-- only Civial Protection can speak in chat
 copy("comms", "comms-lvl2", { 
     color = Color(0, 255, 255),
     aliases = {"c2"},
@@ -121,6 +124,25 @@ copy("comms", "comms-lvl2", {
     end,
 })
 
+]]--
+
+-- You can remove the comms bellow and add your own
+config.Comms["comms"] = { -- name of Comm
+    name = "comms", -- name of Comm -- Not Required
+    aliases = {"c"},  -- aliases for the command -- Not Required
+    color = Color(238, 255, 0),  -- color of the text -- Required
+}
+
+config.Comms["rp"] = { -- name of Comm
+    name = "RP", -- name of Comm -- Not Required
+    color = Color(0, 255, 179),  -- color of the text -- Required
+}
+
+config.Comms["opencomms"] = { -- name of Comm
+    name = "Open Comms", -- name of Comm -- Not Required
+    aliases = {"oc"},  -- aliases for the command -- Not Required
+    color = Color(238, 255, 0),  -- color of the text -- Required
+}
 
 -- Do not edit below this line
 end)
