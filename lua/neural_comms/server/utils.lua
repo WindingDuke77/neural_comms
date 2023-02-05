@@ -53,11 +53,12 @@ function ncomms.BroadCastComms(commsType, comms, author, args)
         if commsType then
             if (comms.customCheck and not comms.customCheck(ply)) or (comms.hearCheck and not comms.hearCheck(ply)) then continue end
             if comms.differentComms[ply:Team()] == commsType then
-                ncomms.SendToClient(ply, {comms.color, "[", CommName, "] ", comms.color, author:Nick(), ": ", Color(255, 255, 255), table.concat(args, " ", 2)})
+                --ncomms.SendToClient(ply, {comms.color, "[", CommName, "] ", comms.color, author:Nick(), ": ", Color(255, 255, 255), table.concat(args, " ", 2)})
+                sendMessage(ply, comms, author, args)
             end
         else
             if (comms.customCheck and not comms.customCheck(ply)) or (comms.hearCheck and not comms.hearCheck(ply)) then continue end
-           
+            sendMessage(ply, comms, author, args)
         end
     end
 end
