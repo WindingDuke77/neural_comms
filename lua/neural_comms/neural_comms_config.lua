@@ -68,6 +68,7 @@ timer.Simple( 0 , function ()
         name = "Display_Name", 
         aliases = {"AnotherName"}, 
         color = Color(255, 255, 255),  **
+        fullcolor = true, -- Makes the entire message the color
         differentComms = {  -- Comms Ids, allows infinite comms for different teams
             --[TEAM_NAME] = "Comm_ID",
             [TEAM_CIV] = "comms_civ",
@@ -134,6 +135,7 @@ config.Comms["comms"] = { -- name of Comm
 
 config.Comms["rp"] = { -- name of Comm
     name = "RP", -- name of Comm -- Not Required
+    fullcolor = true, -- Makes the entire message the color -- Not Required
     color = Color(0, 255, 179),  -- color of the text -- Required
 }
 

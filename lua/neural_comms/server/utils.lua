@@ -34,6 +34,15 @@ function ncomms.SendToClient(ply, Msg)
         net.WriteTable(Msg)
     net.Send(ply)
 end
+
+local function sendMessage(ply, comms, author, args)
+    if comms.fullcolor then
+        ncomms.SendToClient(ply, {comms.color, "[", comms.name, "] ", comms.color, author:Nick(), ": ", table.concat(args, " ", 2)})
+    else
+        ncomms.SendToClient(ply, {comms.color, "[", comms.name, "] ", comms.color, author:Nick(), ": ", Color(255, 255, 255), table.concat(args, " ", 2)})
+    end
+
+end
     
 function ncomms.BroadCastComms(commsType, comms, author, args)
 
@@ -48,7 +57,8 @@ function ncomms.BroadCastComms(commsType, comms, author, args)
             end
         else
             if (comms.customCheck and not comms.customCheck(ply)) or (comms.hearCheck and not comms.hearCheck(ply)) then continue end
-            ncomms.SendToClient(ply, {comms.color, "[", CommName, "] ", comms.color, author:Nick(), ": ", Color(255, 255, 255), table.concat(args, " ", 2)})
+           
         end
     end
 end
+
