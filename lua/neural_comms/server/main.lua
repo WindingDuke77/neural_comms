@@ -11,6 +11,7 @@ local config = ncomms.config
 
 timer.Simple(1, function ()
     for k, v in pairs(config.Comms) do
+        if v.aliases == nil then continue end
         if #v.aliases > 0 then
             for k2, aliase in ipairs(v.aliases) do
                 config.Comms[aliase] = v
