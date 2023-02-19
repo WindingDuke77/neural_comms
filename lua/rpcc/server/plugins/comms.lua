@@ -27,7 +27,7 @@ function plugin.run(ply, commandObj, commsName, msg)
     --     end
     -- end
 
-    ncomms.BroadCastComms(commsType, commsName, commandObj.key or "Console")
+    ncomms.BroadCastComms(nil, commsName, commandObj.key or "Console", msg)
 
 
 

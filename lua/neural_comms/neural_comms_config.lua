@@ -37,7 +37,7 @@ timer.Simple( 0 , function ()
                 TEAM_NAME2,
             })
         Example:
-            CustomCheck = function(ply)
+            customCheck = function(ply)
                 return blacklist(ply, { -- List of teams to blacklist
                     TEAM_NAME,
                     TEAM_NAME2,
@@ -51,7 +51,7 @@ timer.Simple( 0 , function ()
                 TEAM_NAME2,
             })
         Example:
-            CustomCheck = function(ply)
+            customCheck = function(ply)
                 return whitelist(ply, { -- List of teams to whitelist
                     TEAM_NAME,
                     TEAM_NAME2,
