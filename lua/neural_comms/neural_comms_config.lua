@@ -4,13 +4,25 @@
 -- any questions, please contact me
 ncomms = ncomms or {}
 ncomms.config = ncomms.config or {}
-local config = ncomms.config
 ncomms.funcs = ncomms.funcs or {}
-config.Comms = {}
+ncomms.config.Comms = {}
+ncomms.config.UChecker = ncomms.config.UChecker or {}
 
+local config = ncomms.config
+local uconfig = ncomms.config.UChecker
 local copy = ncomms.funcs.copy
 local blacklist = ncomms.funcs.blacklist
 local whitelist = ncomms.funcs.whitelist
+
+
+
+uconfig.Github = "https://github.com/WindingDuke77/neural_comms" -- Github link for the addon
+uconfig.Branch = "main" -- Github branch for the addon
+uconfig.Enabled = true -- Enable the Update Check
+uconfig.Path = "neural_comms" -- File path in Lua folder
+
+
+
 timer.Simple( 0 , function ()
 -- Do not above this line. 
 
