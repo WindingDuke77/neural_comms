@@ -19,16 +19,7 @@ timer.Simple(1, function ()
             config.Comms[v2].aliases = nil
         end
     end
-    
-    for k, v in pairs(config.Comms) do
-        if not v.aliases then continue end
-        if not type(v.aliases) == "table" then continue end
 
-        for k2, v2 in ipairs(v.aliases) do
-            config.Comms[v2] = table.Copy(v)
-            config.Comms[v2].aliases = nil
-        end
-    end
 end)
 
 
@@ -38,6 +29,19 @@ hook.Add("PlayerSay", "ncomms_psay", function (ply, msg)
     if not config.prefix then return MsgC(Color(255,0,0), "[NCOMMS]: Config isnt loaded. Please Scroll up and check the errors") end
     args[1] = string.sub(args[1], #config.prefix + 1)
     args[1] = string.lower(args[1])
+
+        
+    for k, v in pairs(config.Comms) do
+        if not v.aliases then continue end
+        if not type(v.aliases) == "table" then continue end
+
+        for k2, v2 in ipairs(v.aliases) do
+            config.Comms[v2] = table.Copy(v)
+            config.Comms[v2].aliases = nil
+        end
+    end
+
+
     local comms = config.Comms[args[1]]
 
     if not comms then return end
