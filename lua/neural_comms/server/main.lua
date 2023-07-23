@@ -11,11 +11,22 @@ local config = ncomms.config
 
 timer.Simple(1, function ()
     for k, v in pairs(config.Comms) do
-        if v.aliases == nil then continue end
-        if #v.aliases > 0 then
-            for k2, aliase in ipairs(v.aliases) do
-                config.Comms[aliase] = v
-            end
+        if not v.aliases then continue end
+        if not type(v.aliases) == "table" then continue end
+
+        for k2, v2 in ipairs(v.aliases) do
+            config.Comms[v2] = table.Copy(v)
+            config.Comms[v2].aliases = nil
+        end
+    end
+    
+    for k, v in pairs(config.Comms) do
+        if not v.aliases then continue end
+        if not type(v.aliases) == "table" then continue end
+
+        for k2, v2 in ipairs(v.aliases) do
+            config.Comms[v2] = table.Copy(v)
+            config.Comms[v2].aliases = nil
         end
     end
 end)
